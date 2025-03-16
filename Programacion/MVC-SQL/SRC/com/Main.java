@@ -1,4 +1,5 @@
 import controller.MainController;
+import model.ModelDatabase;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,6 +8,10 @@ public class Main {
 
         MainController mainController = new MainController();
         mainController.run();
+
+
+        System.out.println("Llamando a la DB");
+        ModelDatabase database = new ModelDatabase();
     }
     
 }

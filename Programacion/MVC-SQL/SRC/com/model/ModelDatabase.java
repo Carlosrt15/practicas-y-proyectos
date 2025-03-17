@@ -28,12 +28,14 @@ public class ModelDatabase {
 
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             System.out.println("Conexión abierta a la base de datos.");
-
+            
+            //Select
             String query = "SELECT * FROM coches WHERE Marca LIKE ?";
             PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1, "%" + pedirMarca + "%"); // Buscar coincidencias parciales
+            ps.setString(1, "%" + pedirMarca + "%"); 
 
             ResultSet rs = ps.executeQuery();
+            
 
             while (rs.next()) {
                 int id = rs.getInt("id");

@@ -9,9 +9,13 @@ public class Main {
         MainController mainController = new MainController();
         mainController.run();
 
+        	System.out.println("Termina la ejecucion del MainController");
 
         System.out.println("Llamando a la DB");
         ModelDatabase database = new ModelDatabase();
+        database.run();
+        
+        System.out.println();
     }
     
 }

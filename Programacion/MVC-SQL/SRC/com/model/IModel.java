@@ -7,6 +7,8 @@ import model.entities.Car;
 
 
 public interface IModel {
+	
+	
 
 	List<Car> list();
 

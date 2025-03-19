@@ -59,3 +59,39 @@ function ejercicio11_2() {
     titulo.innerText = "He creado una lista";
 }
 
+function pruebaCasa(){
+    let parrafoCasa = document.getElementById("parrafo1");
+    console.log(parrafoCasa);
+    parrafoCasa.innerText = "Desde parrafo";
+}
+
+function creaTabla(){
+    // Creo una tabla y asigno una id
+    let table = document.createElement("table");
+    table.id = "miTabla";
+    table.border = "1";
+
+    // añado tr a una tabla 
+    let tr1 = document.createElement("tr");
+
+    let th1 = document.createElement("th");
+    th1.innerText = "Hola desde th";
+
+    // agregto th1 a tr1
+    tr1.appendChild(th1);
+
+    // Agrego tr1 a la tabla
+    table.appendChild(tr1);
+
+    //Agrego la tabla al bodyy
+
+    document.body.appendChild(table);
+       
+        
+}
+
+function creah2(){
+    let crearH2 = document.createElement("h2");
+        crearH2.innerText = "Hola desde el h2";
+        document.body.appendChild(crearH2);
+}

@@ -21,5 +21,8 @@ public interface IMainView {
 	Car editCar(Car carForEdit);
 
 	void showError(Exception e);
+	
+	Car addCarToDatabase();
+
 
 }

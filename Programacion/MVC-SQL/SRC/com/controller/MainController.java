@@ -72,6 +72,12 @@ public class MainController {
                     List<Car> dbCars = database.consultarCoches();
                     mainView.list(dbCars);
                     break;
+                    
+                case 6: // Insertar coche en la base de datos
+                    Car newCar = mainView.addCarToDatabase();
+                    database.insertarCoche(newCar);
+                    break;
+
 
                 default:
                     mainView.showError(new Exception("Opción no válida."));

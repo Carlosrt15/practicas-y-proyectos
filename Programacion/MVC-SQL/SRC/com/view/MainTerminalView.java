@@ -16,6 +16,7 @@ public class MainTerminalView implements IMainView {
         TerminalUtils.output("3.- Editar coche en memoria");
         TerminalUtils.output("4.- Eliminar coche en memoria");
         TerminalUtils.output("5.- Listar coches desde la base de datos");
+        TerminalUtils.output("6. insertar  base de datos (ID, marca, modelo, consumo, emisiones)");
         TerminalUtils.output("0.- Salir");
 
         return TerminalUtils.inputInt();
@@ -31,7 +32,8 @@ public class MainTerminalView implements IMainView {
         TerminalUtils.output("ID - Marca - Modelo");
 
         for (Car car : list) {
-            TerminalUtils.output(car.toString());
+          TerminalUtils.output(car.toString());
+            
         }
     }
 
@@ -40,7 +42,7 @@ public class MainTerminalView implements IMainView {
         TerminalUtils.output("Nuevo coche");
         TerminalUtils.output("================");
 
-        TerminalUtils.output("Introduzca la marca");
+        TerminalUtils.output("Introduzca la matricula");
         String plate = TerminalUtils.inputText();
 
         TerminalUtils.output("Introduzca el modelo");
@@ -60,10 +62,44 @@ public class MainTerminalView implements IMainView {
         TerminalUtils.output(e.getMessage());
     }
 
-	@Override
-	public Car editCar(Car carForEdit) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-}
+    @Override
+    public Car editCar(Car carForEdit) {
+        if (carForEdit == null) {
+            TerminalUtils.output("El coche seleccionado no existe.");
+            return null;
+        }
 
+        TerminalUtils.output("Editando coche con matrícula: " + carForEdit.getPlate());
+
+        TerminalUtils.output("Introduzca el nuevo modelo (actual: " + carForEdit.getModel() + "): ");
+        String newModel = TerminalUtils.inputText();
+
+        carForEdit.setModel(newModel.isEmpty() ? carForEdit.getModel() : newModel);
+        return carForEdit;
+    }
+    
+    @Override
+    public Car addCarToDatabase() {
+        TerminalUtils.output("Nuevo coche para la base de datos");
+        TerminalUtils.output("================");
+
+        TerminalUtils.output("Introduzca el ID:");
+        int id = TerminalUtils.inputInt();
+
+        TerminalUtils.output("Introduzca la marca:");
+        String marca = TerminalUtils.inputText();
+
+        TerminalUtils.output("Introduzca el modelo:");
+        String modelo = TerminalUtils.inputText();
+
+        TerminalUtils.output("Introduzca el consumo (en litros cada 100km):");
+        String consumo = TerminalUtils.inputText();
+
+        TerminalUtils.output("Introduzca las emisiones (en gramos de CO2/km):");
+        String emisiones = TerminalUtils.inputText();
+
+        return new Car(id, marca, modelo, consumo, emisiones);
+    }
+
+
+	}

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import model.entities.Car;
+import utils.TerminalUtils;
 
 public class ModelDatabase {
 
@@ -28,22 +29,23 @@ public class ModelDatabase {
 
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             System.out.println("Conexión abierta a la base de datos.");
-            
-            //Select
-            String query = "SELECT * FROM coches WHERE Marca LIKE ?";
+            	
+            // Sin terminar
+            String query = "SELECT * FROM coches WHERE Marca LIKE  ? ";
             PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1, "%" + pedirMarca + "%"); 
+           ps.setString(1, "%" + pedirMarca + "%"); // Buscar coincidencias parciales
 
             ResultSet rs = ps.executeQuery();
-            
 
             while (rs.next()) {
-                int id = rs.getInt("id");
+                int id = rs.getInt("Id");
                 String marca = rs.getString("Marca");
                 String modelo = rs.getString("Modelo");
                 String consumo = rs.getString("Consumo");
                 String emisiones = rs.getString("Emisiones");
+              
                 Car car = new Car(id, marca, modelo, consumo, emisiones);
+                TerminalUtils.output(car.toString());
                 list.add(car);
             }
 
@@ -76,10 +78,47 @@ public class ModelDatabase {
             }
         }
     }
+    
+    public void insertarCoche(Car car) {
+        String query = "INSERT INTO coches (Id, Marca, Modelo, Consumo, Emisiones, Imagen) VALUES (?, ?, ?, ?, ?, ?)";
+
+        try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+             PreparedStatement ps = connection.prepareStatement(query)) {
+
+            ps.setInt(1, car.getId());
+            ps.setString(2, car.getMarca());
+            ps.setString(3, car.getModel());
+            ps.setFloat(4, Float.parseFloat(car.getConsumo())); // Dejar esto asi me da error si no
+            ps.setInt(5, Integer.parseInt(car.getEmisiones())); // Dejar esto asi me da error si no
+            ps.setString(6, "default.jpg"); // 
+
+            int filasAfectadas = ps.executeUpdate();
+            if (filasAfectadas > 0) {
+                System.out.println("Coche insertado correctamente.");
+            } else {
+                System.out.println("No se pudo insertar el coche.");
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error al insertar coche en la base de datos.");
+            e.printStackTrace();
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Consumo o Emisione no son valores numéricos válidos.");
+            e.printStackTrace();
+        }
+    }
+    
+    // para hacer update 
+    public void actualizarCoche(Car car) {
+    	String query = "UPDATE coches SET Marca = ?, Modelo = ?, Consumo = ?, Emisiones = ? WHERE Id = ?";
+        
+    	// Continuar Por aqui!!!!!
+    	 //try (Connection connection = DriverManager.getConnection(URL, USERNAME,PASSWORD)); // Continuar Por aqui!!!!!
+    }
+
 
 	public void run() {
 		// TODO Auto-generated method stub
 		
 	}
 }
-

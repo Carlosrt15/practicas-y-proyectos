@@ -92,6 +92,7 @@ function creaTabla(){
 
 function creah2(){
     let crearH2 = document.createElement("h2");
-        crearH2.innerText = "Hola desde el h2";
+    let textoUsuario = prompt("Introduce un texto para el join");
+        crearH2.innerText = textoUsuario;
         document.body.appendChild(crearH2);
 }

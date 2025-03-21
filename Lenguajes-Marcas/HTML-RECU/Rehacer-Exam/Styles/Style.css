@@ -34,6 +34,7 @@ header {
     height: 60px;
     padding-right: 99px;
     top: 0;
+    border-radius: 4px;
 }
 
 header p {
@@ -72,20 +73,21 @@ h3, #p1 {
 #div1, #div2, #div3 {
     width: 740px;
     height: 260px;
-    background-color: #008b8b;
+    background-color: #008b8b69;
     color: #ff4500;
-    opacity: 0.99;
-    text-align: center;
+        
     padding: 20px;
 }
 
 #div1 img, #div2 img, #div3 img {
+    
     margin-right: 20px;
     height: 129px;
 }
 
 /* Footer fijo y visible */
 footer {
+    display: flex;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -95,4 +97,9 @@ footer {
     padding: 15px;
     font-size: 18px;
     z-index: 100;
+
+}
+
+#boton1{
+    background-color: yellow;
 }

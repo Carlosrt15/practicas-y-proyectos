@@ -1,10 +1,6 @@
 body {
     background-color: black;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Asegura que el contenido mínimo sea la altura de la pantalla */
+           
 }
 
 #parrafo_registro{
@@ -30,11 +26,12 @@ header {
     font-size: 20px;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+   
     height: 60px;
     padding-right: 99px;
-    top: 0;
+top: 0;
     border-radius: 4px;
+    
 }
 
 header p {
@@ -54,7 +51,7 @@ h1 {
     margin-top: 80px;
 }
 
-h3, #p1 {
+ #p1 {
     text-align: center;
     color: #008b8b;
 }
@@ -81,12 +78,13 @@ h3, #p1 {
 
 #div1 img, #div2 img, #div3 img {
     
-    margin-right: 20px;
+    margin-right: 100px;
     height: 129px;
 }
 
 /* Footer fijo y visible */
-footer {
+footer{
+border-radius: 9px;
     display: flex;
     position: fixed;
     bottom: 0;
@@ -102,4 +100,9 @@ footer {
 
 #boton1{
     background-color: yellow;
+    border: none;
+}
+#correo:invalid{
+    background-color: lightcoral;
+    border-color: white;
 }

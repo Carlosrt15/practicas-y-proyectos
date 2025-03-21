@@ -48,10 +48,11 @@
     <footer>
         <p>Únete a nuestra newsletter</p>
         <form action="" method="get">
-            <label for="correo">Correo electrónico:</label>
-            <input type="email" id="correo" name="correo" placeholder="Introduce tu correo">
+         <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" placeholder="Introduce tu correo" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+          
            
-            <button type="submit" formaction="Pagina2.html" id="boton1">Suscribirse</button>
+          <button type="submit" formaction="Pagina2.html" id="boton1">Suscribirse</button>
        
         </form>
     </footer>

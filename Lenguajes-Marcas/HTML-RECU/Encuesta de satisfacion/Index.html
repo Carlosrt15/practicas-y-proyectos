@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="./Styles/Style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de satisfacción</title>
+</head>
+<body>
+    <header>
+        <h1>Encuesta sobre su experiencia en el Parador de Gredos </h1>
+    </header>
+
+    <div id="encuesta">
+        <h3>ENCUESTA DE SATISFACIÓN</h3>
+        <p>Con afan de mejorar en todo lo posible, realizamos esta pequeña<br>
+        encuesta a todos los clientes que han pasado por nuestras<br>
+    instalaciones en los ultimos 3 meses<br>
+    Muchas gracias por su colaboracion</p>
+    <img src="./img/121.jpg" alt="Foto de Salamanca">
+    </div>
+
+    <main>
+        <form action="" id="formulario">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" placeholder="Ingrese su nombre">
+        <label for="email">Email:</label>
+        <input type="email" placeholder="Ingrese su email"><br><br>
+        <label for="telefono">Teléfono(9 digitos)</label>
+        <input type="number" placeholder="Ingrese su telefono">
+        <label for="servicio">Tipo de servicio</label>
+
+        <select name="servicio" id="servicio">
+            <option value="1">Valor 1</option>
+            <option value="2">Valor 2</option>
+        </select><br><br>
+        <table id="table"></table>
+
+        <div id="contenedor-opciones">
+            <div>
+                <p>¿Qué nuevas ofertas le gustaría ver?</p>
+                <input type="checkbox" name="familiar" id="familiar">
+                <label for="familiar">Packs familiares</label><br><br>
+                <input type="checkbox" name="relax" id="relax">
+                <label for="relax">Relax con amigos</label><br><br>
+                <input type="checkbox" name="gourmet" id="gourmet">
+                <label for="gourmet">Gourmet y aventura</label>
+            </div>
+        
+            <div id="derecho">
+                <p>¿Recomendaría el Parador de Gredos a sus conocidos?</p>
+                <input type="radio" name="recomendacion" id="definitivamente"> 
+                <label for="definitivamente">Definitivamente</label> <br><br>
+                <input type="radio" name="recomendacion" id="probablemente"> 
+                <label for="probablemente">Probablemente</label> <br><br>
+                <input type="radio" name="recomendacion" id="no"> 
+                <label for="no">No estoy seguro</label>
+            </div>
+        </div>
+        
+        
+        
+        </form>
+    </main>
+
+</body>
+</html>

@@ -87,3 +87,12 @@ main form{
     width: 240px;
     text-align: right;
 }
+main textarea{
+    width: 600px;
+    height: 90px;
+}
+
+#button{
+    width: 90px;
+    height: 30px;
+}

@@ -96,3 +96,37 @@ function creah2(){
         crearH2.innerText = textoUsuario;
         document.body.appendChild(crearH2);
 }
+
+/* 
+Ejercicio 12
+
+*/
+
+function ejercicio12(){
+    // Cambiar a rojo y negrita
+    let parrafo = document.getElementById("parrafo1");
+     parrafo.style.color = "red";
+      parrafo.style.fontWeight = "bold";
+
+      // cambiar color de fondo de la lista ordenada 
+
+      let lista2 = document.getElementById("miLista");
+       lista2.style.backgroundColor = "yellow"; 
+      lista2.style.color = "blue";
+
+    // aplicamos estilo al titulo naranj y rosa
+    let titulo = document.getElementsByTagName("h1")[0];
+    titulo.style.textShadow = "3px 5px pink, 0px 2px 7px orange ";
+
+    
+    
+}
+
+// parte 2 del button
+function ejercicio11_2(){
+    let parrafo2 = document.getElementById("parrafo1");
+    parrafo2.style.color = "yellow";
+    parrafo2.style.backgroundColor = "black";
+    parrafo2.style.border = "3px dashed red";
+
+}

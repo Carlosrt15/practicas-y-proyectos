@@ -3,13 +3,8 @@ package com;
 import com.controller.MainController;
 
 public class Main {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Hola Mundo");
-		
-		MainController mainController = new MainController();
-		mainController.run();
-	}
-
+    public static void main(String[] args) {
+        MainController mainController = new MainController();
+        mainController.run();
+    }
 }

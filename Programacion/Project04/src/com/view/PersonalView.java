@@ -1,54 +1,72 @@
 package com.view;
 
+import com.model.modelDatabase;
 import utils.TerminalUtils;
 
 public class PersonalView {
-	
-	public PersonalView() {
-		
-	}
-	
-	public void menu() {
-        TerminalUtils.output("Menú de Personal");
-        TerminalUtils.output("----------------------");
 
+    private modelDatabase database;
+
+    public PersonalView(modelDatabase database) {
+        this.database = database;
+    }
+
+    public void menu() {
+        TerminalUtils.output("Menú de Personal");
         TerminalUtils.output("0. Volver al menú principal");
         TerminalUtils.output("1. Listar Personal");
         TerminalUtils.output("2. Dar de alta Personal");
-        TerminalUtils.output("3. Editar Personal");
-        TerminalUtils.output("4. Eliminar Personal");
+        TerminalUtils.output("3. Eliminar Personal");
 
         int option;
-
         do {
             option = TerminalUtils.inputInt();
-
             switch (option) {
                 case 0:
                     TerminalUtils.output("Volviendo al menú Principal...");
                     break;
-
                 case 1:
-                    TerminalUtils.output("Lista de Personal");
+                    this.listPersonal();
                     break;
-
                 case 2:
-                    TerminalUtils.output("Alta de personal");
+                    this.addPersonal();
                     break;
-
                 case 3:
-                    TerminalUtils.output("Editar Personal");
+                    this.deletePersonal();
                     break;
-
-                case 4:
-                    TerminalUtils.output("Eliminar Personal");
-                    break;
-
                 default:
                     TerminalUtils.output("La opción no es válida");
             }
-
         } while (option != 0);
     }
-}
+
+    private void listPersonal() {
+        try {
+            var resultSet = database.getAllPersonal();
+            while (resultSet.next()) {
+                TerminalUtils.output("ID: " + resultSet.getInt("id") + " Nombre: " + resultSet.getString("name"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void addPersonal() {
+        TerminalUtils.output("Ingrese el nombre del personal: ");
+        String name = TerminalUtils.inputText();
+        TerminalUtils.output("Ingrese la ocupación: ");
+        String occupation = TerminalUtils.inputText();
+        TerminalUtils.output("Ingrese el id de la sala: ");
+        int idRoom = TerminalUtils.inputInt();
+
+        database.addPersonal(name, occupation, idRoom);
+        TerminalUtils.output("Personal agregado correctamente.");
+    }
+
+    private void deletePersonal() {
+        TerminalUtils.output("Ingrese el ID del personal a eliminar: ");
+        int id = TerminalUtils.inputInt();
+        database.deletePersonal(id);
+        TerminalUtils.output("Personal eliminado correctamente.");
+    }
 }

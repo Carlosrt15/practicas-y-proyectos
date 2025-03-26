@@ -1,3 +1,20 @@
 body{
     background-color: azure;
 }
+
+#form{
+    flex-direction: column;
+    margin-top: 100px;
+    display: flex;
+    padding: 100px;
+    border: solid 3px black;
+    width: 500px;
+    
+    
+}
+
+
+#form input{
+    width: 100px;
+    padding: 5px;
+}

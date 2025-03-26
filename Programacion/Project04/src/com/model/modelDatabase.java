@@ -1,22 +1,19 @@
 package com.model;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class modelDatabase {
 
     private static final String USERNAME = "root";
     private static final String PASSWORD = "PracticaRoot";
-    private static final String URL = "jdbc:mysql://127.0.0.1:3306/p04_gym?ssl=false";  // Asegúrate de que esta URL es correcta
+    private static final String URL = "jdbc:mysql://127.0.0.1:3306/p04_gym?ssl=false";
 
     private Connection connection;
 
     public modelDatabase() {
         try {
-            // Conexión a la base de datos
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             System.out.println("Conexión establecida con éxito.");
         } catch (SQLException e) {
@@ -24,80 +21,95 @@ public class modelDatabase {
         }
     }
 
-    // Método para obtener todos los registros de 'personal'
-    public ResultSet getAllPersonal() {
-        try {
-            String query = "SELECT * FROM personal";  // Asegúrate de que 'personal' es el nombre correcto de la tabla
-            PreparedStatement stmt = connection.prepareStatement(query);
-            return stmt.executeQuery();
+    // Obtener todos los registros de 'personal'
+    public List<String> getAllPersonal() {
+        List<String> personalList = new ArrayList<>();
+        String query = "SELECT id_personal, name, occupation, id_room FROM personal";
+
+        try (PreparedStatement stmt = connection.prepareStatement(query);
+             ResultSet resultSet = stmt.executeQuery()) {
+            while (resultSet.next()) {
+                personalList.add("ID: " + resultSet.getInt("id_personal") +
+                        " | Nombre: " + resultSet.getString("name") +
+                        " | Ocupación: " + resultSet.getString("occupation") +
+                        " | Sala ID: " + resultSet.getInt("id_room"));
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return personalList;
     }
 
-    // Método para agregar un registro de Personal
+    // Agregar un nuevo Personal
     public void addPersonal(String name, String occupation, int idRoom) {
-        try {
-            // No necesitamos pasar 'id_personal' ya que es AUTO_INCREMENT
-            String query = "INSERT INTO personal (name, occupation, id_personal) VALUES (?, ?, ?)";  // Usa 'id_room' y no 'idRoom'
-            PreparedStatement stmt = connection.prepareStatement(query);
+        String query = "INSERT INTO personal (name, occupation, id_room) VALUES (?, ?, ?)";
+
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, name);
             stmt.setString(2, occupation);
-            stmt.setInt(3, idRoom);  // Asegúrate de que 'id_room' es correcto y existe
+            stmt.setInt(3, idRoom);
             stmt.executeUpdate();
+            System.out.println("Personal agregado correctamente.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    // Método para eliminar un registro de Personal
+    // Eliminar Personal
     public void deletePersonal(int id) {
-        try {
-            // Eliminar utilizando 'id_personal'
-            String query = "DELETE FROM personal WHERE id_personal = ?";
-            PreparedStatement stmt = connection.prepareStatement(query);
+        String query = "DELETE FROM personal WHERE id_personal = ?";
+
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setInt(1, id);
             stmt.executeUpdate();
+            System.out.println("Personal eliminado correctamente.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    // Método para obtener todos los registros de 'room'
-    public ResultSet getAllRooms() {
-        try {
-            String query = "SELECT * FROM room";  // 'room' es el nombre correcto de la tabla
-            PreparedStatement stmt = connection.prepareStatement(query);
-            return stmt.executeQuery();
+    // Obtener todas las salas
+    public List<String> getAllRooms() {
+        List<String> roomList = new ArrayList<>();
+        String query = "SELECT id_room, name, capacity, type FROM room";
+
+        try (PreparedStatement stmt = connection.prepareStatement(query);
+             ResultSet resultSet = stmt.executeQuery()) {
+            while (resultSet.next()) {
+                roomList.add("ID: " + resultSet.getInt("id_room") +
+                        " | Nombre: " + resultSet.getString("name") +
+                        " | Capacidad: " + resultSet.getInt("capacity") +
+                        " | Tipo: " + resultSet.getString("type"));
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return roomList;
     }
 
-    // Método para agregar un registro de Room
+    // Agregar Sala
     public void addRoom(String name, int capacity, String type) {
-        try {
-            // No es necesario pasar 'id_room' ya que es AUTO_INCREMENT
-            String query = "INSERT INTO room (name, capacity, type) VALUES (?, ?, ?)";
-            PreparedStatement stmt = connection.prepareStatement(query);
+        String query = "INSERT INTO room (name, capacity, type) VALUES (?, ?, ?)";
+
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, name);
             stmt.setInt(2, capacity);
             stmt.setString(3, type);
             stmt.executeUpdate();
+            System.out.println("Sala agregada correctamente.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    // Método para eliminar un registro de Room
+    // Eliminar Sala
     public void deleteRoom(int id) {
-        try {
-            String query = "DELETE FROM room WHERE id_room = ?";  // 'id_room' es el nombre correcto de la columna
-            PreparedStatement stmt = connection.prepareStatement(query);
+        String query = "DELETE FROM room WHERE id_room = ?";
+
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setInt(1, id);
             stmt.executeUpdate();
+            System.out.println("Sala eliminada correctamente.");
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -3,6 +3,8 @@ package com.view;
 import com.model.modelDatabase;
 import utils.TerminalUtils;
 
+import java.util.List;
+
 public class RoomView {
 
     private modelDatabase database;
@@ -36,18 +38,17 @@ public class RoomView {
                     break;
                 default:
                     TerminalUtils.output("La opción no es válida");
+                    break;
             }
         } while (option != 0);
     }
 
     private void listRooms() {
-        try {
-            var resultSet = database.getAllRooms();
-            while (resultSet.next()) {
-                TerminalUtils.output("ID: " + resultSet.getInt("idRoom") + " Nombre: " + resultSet.getString("name"));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        List<String> roomList = database.getAllRooms();
+        if (roomList.isEmpty()) {
+            TerminalUtils.output("No hay salas registradas.");
+        } else {
+            roomList.forEach(TerminalUtils::output);
         }
     }
 
@@ -60,13 +61,12 @@ public class RoomView {
         String type = TerminalUtils.inputText();
 
         database.addRoom(name, capacity, type);
-        TerminalUtils.output("Sala agregada correctamente.");
     }
 
     private void deleteRoom() {
         TerminalUtils.output("Ingrese el ID de la sala a eliminar: ");
         int id = TerminalUtils.inputInt();
         database.deleteRoom(id);
-        TerminalUtils.output("Sala eliminada correctamente.");
     }
 }
+

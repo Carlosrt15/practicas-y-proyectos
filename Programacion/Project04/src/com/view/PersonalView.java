@@ -3,6 +3,8 @@ package com.view;
 import com.model.modelDatabase;
 import utils.TerminalUtils;
 
+import java.util.List;
+
 public class PersonalView {
 
     private modelDatabase database;
@@ -36,18 +38,17 @@ public class PersonalView {
                     break;
                 default:
                     TerminalUtils.output("La opción no es válida");
+                    break;
             }
         } while (option != 0);
     }
 
     private void listPersonal() {
-        try {
-            var resultSet = database.getAllPersonal();
-            while (resultSet.next()) {
-                TerminalUtils.output("ID: " + resultSet.getInt("id") + " Nombre: " + resultSet.getString("name"));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        List<String> personalList = database.getAllPersonal();
+        if (personalList.isEmpty()) {
+            TerminalUtils.output("No hay personal registrado.");
+        } else {
+            personalList.forEach(TerminalUtils::output);
         }
     }
 
@@ -60,13 +61,11 @@ public class PersonalView {
         int idRoom = TerminalUtils.inputInt();
 
         database.addPersonal(name, occupation, idRoom);
-        TerminalUtils.output("Personal agregado correctamente.");
     }
 
     private void deletePersonal() {
         TerminalUtils.output("Ingrese el ID del personal a eliminar: ");
         int id = TerminalUtils.inputInt();
         database.deletePersonal(id);
-        TerminalUtils.output("Personal eliminado correctamente.");
     }
 }

@@ -7,16 +7,16 @@ import com.model.modelDatabase;
 
 public class MainController {
 
-    private MainTerminalView mainView;   // Vista principal
-    private modelDatabase database;      // Base de datos
-    private PersonalView personalView;   // Vista del personal
-    private RoomView roomView;           // Vista de las salas
+    private MainTerminalView mainView;   
+    private modelDatabase database;      
+    private PersonalView personalView;   
+    private RoomView roomView;           
 
     public MainController() {
-        this.database = new modelDatabase();  // Instancia de base de datos
-        this.mainView = new MainTerminalView(this);  // Pasamos el controlador a MainTerminalView
-        this.personalView = new PersonalView(database);  // Pasamos la base de datos a PersonalView
-        this.roomView = new RoomView(database);          // Pasamos la base de datos a RoomView
+        this.database = new modelDatabase();  
+        this.mainView = new MainTerminalView(this);  
+        this.personalView = new PersonalView(database);  
+        this.roomView = new RoomView(database);         
     }
 
     // Método que devuelve la base de datos

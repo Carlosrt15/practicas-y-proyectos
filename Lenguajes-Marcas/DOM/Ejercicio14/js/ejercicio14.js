@@ -17,6 +17,26 @@ window.onload = function ejercicio14(){
 
             form.insertBefore(crearNumCuenta, edadInput.nextElementSibling);
             form.insertBefore(inputNumCuenta, crearNumCuenta.nextElementSibling);
+
+            // Contraseña se pone bluur
+            let passwordInput = document.getElementById("password");
+
+            if (passwordInput) {
+
+                passwordInput.addEventListener("focus", function () {
+                    passwordInput.classList.add("resaltado"); // aplica la clase
+                    
+                });
+
+                // Restaura el borde
+
+                passwordInput.addEventListener("blur", function() {
+
+                    passwordInput.classList.remove("resaltado");
+                });
+            }
+ 
+
             
         }
 

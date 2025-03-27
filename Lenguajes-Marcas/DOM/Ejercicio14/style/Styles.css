@@ -1,6 +1,4 @@
-body{
-    background-color: azure;
-}
+
 
 #form{
     flex-direction: column;
@@ -17,4 +15,12 @@ body{
 #form input{
     width: 100px;
     padding: 5px;
+}
+
+input:focus{
+    border:  2px solid blue;
+}
+
+.resaltado {
+    background-color: yellow;
 }

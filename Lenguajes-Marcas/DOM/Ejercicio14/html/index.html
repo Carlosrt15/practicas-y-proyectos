@@ -1,39 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="/style/Styles.css  ">
+    <link rel="stylesheet" href="/style/Styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio14</title>
-    <script src="/js/ejercicio14.js" 90></script>
+    <script src="/js/ejercicio14.js" ></script>
 </head>
-<body>
-<main onload="ejercicio14()">
+<body onload="ejercicio14()" onload="llamarFormulario()">
+<main >
     <form action="" id="form">
-        <label for="name">Nombre Usuario:</label>
+        <label for="name" class="label">Nombre Usuario:</label>
         <input type="text" placeholder="Introduce tu nombre"><br>
-        <label for="password">Password:</label>
+        <label for="password" class="label">Password:</label>
         <input type= "password" id="password">
 
-        <label for="edad">Edad</label>
+        <label for="edad" class="label">Edad</label>
         <input type="text" id="edad">
 
-        <label for="Sexo">Sexo:</label>
+        <label for="Sexo" class="label">Sexo:</label>
                 
         <label for="">
-            <input type="radio" value="H" name="sexo" placeholder="H"> Hombre
+            <input type="radio" value="H" name="sexo" placeholder="H" class="label"> Hombre
         </label>
         <label for="">
             <input type="radio" value="H" name="sexo" placeholder="M"> Mujer
         </label>
        <br>
        <input type="reset" value="borrar"> <br>
-        <input type="submit" value="enviar"><br>
 
+       <form action="" id="formenvio">
+        <input type="submit" value="enviar"  ><br>
+    </form>
 
     </form>
     
 </main>
 
-</body>
+</body >
 </html>

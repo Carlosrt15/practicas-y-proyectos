@@ -24,3 +24,7 @@ input:focus{
 .resaltado {
     background-color: yellow;
 }
+
+.label-hover{
+    font-size: 50px;
+}

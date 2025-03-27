@@ -6,6 +6,7 @@ window.onload = function ejercicio14(){
 
             // obtiene el formulario
             let form = document.getElementById("form");
+            let edadInput = document.getElementById("edad");
 
             //Crear el campo Numero cuenta
             let crearNumCuenta = document.createElement("label");
@@ -14,8 +15,8 @@ window.onload = function ejercicio14(){
             let inputNumCuenta = document.createElement("input");
             inputNumCuenta.type = "text";
 
-            form.appendChild(crearNumCuenta);
-            form.appendChild(inputNumCuentaNumCuenta);
+            form.insertBefore(crearNumCuenta, edadInput.nextElementSibling);
+            form.insertBefore(inputNumCuenta, crearNumCuenta.nextElementSibling);
             
         }
 

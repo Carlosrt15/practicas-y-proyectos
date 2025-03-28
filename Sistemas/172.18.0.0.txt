@@ -21,3 +21,9 @@ broadcast:192.168.1.255
 
 Rango: 192.168.1.1 - 192.168.1.254
 N IP : 2^8 -2 = 256 -2 = 254
+255.255.0.0
+
+respuesta final es 
+el 55 en binario es 00110111 con lo que necesitamos 6 bits para formarlo, el 3 byte es de la subred y necesita terner
+6 1s para subred con lo que sera 11111100 que es 252 en binario también podríamos indicar la mascara de subred con
+/22 (que es los 16 obligatorios por ser una ip de tipo B + 6 bits necesarios para la subred).

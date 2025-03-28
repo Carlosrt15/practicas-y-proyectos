@@ -1,0 +1,31 @@
+192.168.56.0/24
+
+N: 2^n -2 >= 20  ==> n= 5
+
+255.255.255.00000000
+255.255.255.111 00000
+
+255.255.255.224
+G
+N subredes : 2^3=8
+
+Salto de red 256-224=32
+
+sexta subred:
+192.168.56.160
+rango: 192.168.56.161/192.168.56.190
+Ip broadcast: 192.168.56.191
+Ip puerta enlace 192.168.56.161
+
+
+1
+ip 172.30.0.0/16
+tengo que tener 1002 2^10 = 1024
+
+respuesta final es 
+el 55 en binario es 00110111 con lo que necesitamos 6 bits para formarlo, el 3 byte es de la subred y necesita terner
+6 1s para subred con lo que sera 11111100 que es 252 en binario también podríamos indicar la mascara de subred con
+/22 (que es los 16 obligatorios por ser una ip de tipo B + 6 bits necesarios para la subred).	
+
+
+EJERCICIO 2 

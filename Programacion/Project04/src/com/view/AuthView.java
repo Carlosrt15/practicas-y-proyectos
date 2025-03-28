@@ -21,6 +21,8 @@ public class AuthView {
 		
 		TerminalUtils.output("Introduce tu Usuario");
 		String userPassword = sc.nextLine();
+
+		
 		
 		
 		

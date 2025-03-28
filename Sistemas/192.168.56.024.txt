@@ -23,7 +23,7 @@ ip 172.30.0.0/16
 tengo que tener 1002 2^10 = 1024
 
 respuesta final es 
-el 55 en binario es 00110111 con lo que necesitamos 6 bits para formarlo, el 3 byte es de la subred y necesita terner
+el 55 en binario es 00110111 con lo que necesitamos 6 bits para formarlo, el 3 byte es de la subred y necesita tener
 6 1s para subred con lo que sera 11111100 que es 252 en binario también podríamos indicar la mascara de subred con
 /22 (que es los 16 obligatorios por ser una ip de tipo B + 6 bits necesarios para la subred).	
 

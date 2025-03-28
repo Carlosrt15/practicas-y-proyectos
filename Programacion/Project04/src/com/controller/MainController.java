@@ -17,6 +17,7 @@ public class MainController {
         this.mainView = new MainTerminalView(this);  
         this.personalView = new PersonalView(database);  
         this.roomView = new RoomView(database);         
+        
     }
 
     // Método que devuelve la base de datos

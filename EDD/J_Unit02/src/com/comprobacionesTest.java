@@ -21,7 +21,7 @@ public class comprobacionesTest {
 	}
 	
 	@Test
-	public void testConstructorArrayNulo() {
+	public void testConstructorArrayNulo(){
 	    assertThrows(IllegalArgumentException.class, () -> new Comprobaciones(null),"Debería lanzar una excepción si el array es null");
 	            
 	}

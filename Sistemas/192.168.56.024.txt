@@ -18,14 +18,72 @@ Ip broadcast: 192.168.56.191
 Ip puerta enlace 192.168.56.161
 
 
-1
+1 ejercicio
 ip 172.30.0.0/16
 tengo que tener 1002 2^10 = 1024
 
 respuesta final es 
 el 55 en binario es 00110111 con lo que necesitamos 6 bits para formarlo, el 3 byte es de la subred y necesita tener
 6 1s para subred con lo que sera 11111100 que es 252 en binario también podríamos indicar la mascara de subred con
-/22 (que es los 16 obligatorios por ser una ip de tipo B + 6 bits necesarios para la subred).	
+/22 (que es los 16 obligatorios por ser una ip de tipo B + 6 bits necesarios para la subred).
+
+Respuesta correcta la C: 255.255.252.0	
 
 
 EJERCICIO 2 
+
+IP: 192.168.16.0/24
+tengo que tener 10 2^4 =16
+
+el 10 en binario es 1010 con lo que necesitamos 4 bits para la subred, la dirección 192.168.16.0/24 ya tiene 24 bits
+para la red si añadimos 4 bits para la subred la mascara será:
+			24+4=28
+
+
+	/28 => 255.255.255.240 la respuesta correcta es la C
+
+
+
+
+
+
+
+
+EJERCICIO 3
+
+Ip base de una clase b tiene una mascara por defecto /16 (255.255.0.0)
+
+2^3 =8
+
+necesitamos 3 bits para el tercer octeto para la subred 
+16+3 = 19 nueva mascara /19
+------------------------------------------------------------
+una ipv4 tiene 32 bits en total
+calcular cuantos host podemos tener con los bits restantes 
+
+bits para host 32-19 = 13
+
+el numero de host por subred se obtiene 
+
+2^13 - 2 = 8192 - 2 = 8190
+
+
+convertir la mascara a formato decimal 
+
+16 bits fijos 255.255.XXX.XXX
+
+
+3 bits en el tercer octeto
+(11100000, 3 bits en 1, el resto en 0)
+
+el cuarto permanece en 0 por que es para los host
+
+11100000 es 224 en decimal
+
+por lo cual la mascara de subred es 255.255.224.0
+
+
+
+EJERCICIO 4
+a,c
+

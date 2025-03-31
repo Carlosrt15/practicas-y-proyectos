@@ -1,0 +1,40 @@
+Ejercicios subneting pdf
+
+192.168.54.0 tipo C
+255.255.255.0/24 mascara por defecto
+Para crear 8 subredes necesitamos
+2^3 = 8 necesitamos 3 bits de la parte del host para las subredes (11100000) = 224 en decimal
+24+3 = 27
+Nueva mascara 255.255.255.224
+
+Calcular tamaño de cada subred
+
+8-3 = 5 bits
+
+2^5 -2 = 30 (se resta la ip de red y broadcast)
+
+Salto entre subredes: El último octeto avanzará en bloques de 32 (porque 2^5 = 32)
+
+
+Este ejercicio esta incompleto 
+
+---------------------------------------------------------------------
+
+EJERCICIO2
+IP 192.168.2.160
+255.255.255.192
+
+
+a. Clase de la IP.
+Es de clase c
+
+
+b. Número de bits destinados a hosts.
+8 bits destinados a host 
+
+
+c. Dirección de subred.
+
+d. Posibles IPs que pueden tomar los hosts y dispositivos que componen esta
+red.
+e. Número máximo de hosts.

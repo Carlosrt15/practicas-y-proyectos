@@ -24,6 +24,9 @@ function arrayAleatorio() {
 
 }
 
+
+//Ejercicio 2 Udemy
+
 function arrayIngredientes() {
 
     let listaIngredientes = ["Pan","Aceite","Olivas","Pimiento","Azucar"];

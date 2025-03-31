@@ -18,7 +18,7 @@
 }
 
 input:focus{
-    border:  2px solid blue;
+    border:  7px solid red;
 }
 
 .resaltado {

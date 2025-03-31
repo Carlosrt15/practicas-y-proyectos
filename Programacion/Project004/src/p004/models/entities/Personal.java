@@ -17,4 +17,14 @@ public class Personal {
     public String getName() { return name; }
     public String getOccupation() { return occupation; }
     public int getIdRoom() { return idRoom; }
+
+    @Override
+    public String toString() {
+        return "Personal{" +
+               "idPersonal=" + idPersonal +
+               ", name='" + name + '\'' +
+               ", occupation='" + occupation + '\'' +
+               ", idRoom=" + idRoom +
+               '}';
+    }
 }

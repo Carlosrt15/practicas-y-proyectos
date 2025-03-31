@@ -10,13 +10,16 @@ function ejercicio14(){
 
             //Crear el campo Numero cuenta
             let crearNumCuenta = document.createElement("label");
-            crearNumCuenta.textContent = "Numero de cuenta";
+            crearNumCuenta.innerText = "Numero de cuenta";
 
             let inputNumCuenta = document.createElement("input");
-            inputNumCuenta.type = "text";
+            // inputNumCuenta.type = "text";
+            inputNumCuenta.setAttribute("type", "text");
 
-            form.insertBefore(crearNumCuenta, edadInput.nextElementSibling);
-            form.insertBefore(inputNumCuenta, crearNumCuenta.nextElementSibling);
+            form.insertBefore(crearNumCuenta, edadInput.nextSibling);
+            form.insertBefore(inputNumCuenta, crearNumCuenta.nextSibling);
+           
+
                         
         }
 
@@ -87,6 +90,10 @@ function llamarFormulario() {
 }
 
 
-
+function confirmar() {
+    
+    return confirm("¿Desea enviar los datos?");
+       
+}
 
 

@@ -38,3 +38,31 @@ c. Dirección de subred.
 d. Posibles IPs que pueden tomar los hosts y dispositivos que componen esta
 red.
 e. Número máximo de hosts.
+
+
+
+
+
+EJERCICIO5  --------------------------------------------------------------------------------------------
+
+Siendo la dirección de subred 172.23.96.0/19
+
+
+a. Máscara de subred:
+
+11111111.11111111.11100000.00000000 (255.255.224.0) hay 13 0s y el resto 1s
+
+
+b. ¿Cuántos equipos, impresoras, etc. se puede conectar a esta red?
+(2^13)-2 = 8190
+
+
+
+EJERCICIO 6  --------------------------------------------------------------------------------------------
+
+172.16.45.14/30
+11111111.11111111.11111111.11111100 (255.255.255.)
+172.16.45.00001110 => 172.16.45.12
+172.16.45.000011
+
+saber bits para host y red

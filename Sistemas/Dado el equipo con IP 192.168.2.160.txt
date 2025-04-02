@@ -1,0 +1,33 @@
+Dado el equipo con IP 192.168.2.160 que pertenece a una red con máscara
+255.255.255.192, indica:
+
+a. Clase de la IP.
+La ip es de Clase C
+
+b. Número de bits destinados a hosts.
+192.168.2.160 == 11000000.10101000.00000010.10100000
+
+
+Una dirección IPv4 tiene 32 bits en total.
+255.255.255.192 == 11111111.11111111.11111111.11000000 
+Aquí hay 26 bits en 1 (bits de red).
+Los 6 bits restantes en 0 son los bits destinados a los hosts.
+
+
+
+
+c. Dirección de subred.
+
+Operacion And
+11000000.10101000.00000010.10100000 192.168.2.160
+11111111.11111111.11111111.11000000 255.255.255.192
+11000000.10101000.00000010.10000000 = 192.168.2.128
+
+d. Posibles IPs que pueden tomar los hosts y dispositivos que componen esta
+
+ Dirección de subred = 192.168.2.128
+ Primer host         = 192.168.2.128
+Último host	192.168.2.190
+e. Número máximo de hosts.
+
+2^6 - 2 = 64 -2 = 62 máximo de host

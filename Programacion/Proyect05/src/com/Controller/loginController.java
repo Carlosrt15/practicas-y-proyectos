@@ -11,18 +11,18 @@ public class loginController implements ILoginController {
     
     public loginController() {
         try {
-            this.model = new loginModelDatabase(); // Crear el modelo de la base de datos
+            this.model = new loginModelDatabase(); 
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    // Método para verificar el login
+   
     public boolean checkLogin(String name, String password) {
-        return model.checkLogin(name, password); // Verifica en la base de datos
+        return model.checkLogin(name, password); 
     }
 
-    // Método para listar usuarios
+   
     public void listarUsuarios() {
         model.listarUsuarios();
     }

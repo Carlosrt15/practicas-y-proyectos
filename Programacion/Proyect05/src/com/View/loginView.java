@@ -13,7 +13,7 @@ public class loginView {
     
     public void mostrar() {
         String name, password;
-        TerminalUtils.output("Por favor, ingresa tus credenciales.");
+        TerminalUtils.output(" ingresa tus credenciales.");
         TerminalUtils.output("Nombre de usuario:");
         name = TerminalUtils.inputText();
         TerminalUtils.output("Contraseña:");

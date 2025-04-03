@@ -5,7 +5,7 @@ public class Roles {
     private int id;
     private String name;
     
-    // Constructor con todos los atributos
+  
     public Roles(int id, String name) {
         this.id = id;
         this.name = name;
@@ -29,7 +29,7 @@ public class Roles {
         this.name = name;
     }
 
-    // Método toString para representar el objeto como cadena
+
     @Override
     public String toString() {
         return "Roles{" +

@@ -38,5 +38,18 @@ class ValidadorContraseñaTest {
 		
 		assertFalse(resultado2, "Una contraseña con >8 carateres , mayuscula, minuscula");
 	}
+	
+	@Test
+	
+	void  testContraseñaVacia() {
+		String contraseñaVacia = "";
+		
+		boolean resultado3 = validadorContraseña.validar(contraseñaVacia);
+		
+		assertFalse(resultado3, "La contraseña esta vacia deberia dar fallo");
+		
+	}
+	
+	
 
 }

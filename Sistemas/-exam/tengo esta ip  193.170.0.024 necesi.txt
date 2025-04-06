@@ -1,0 +1,88 @@
+
+
+
+
+Usando la red 172.30.0.0/16, crea subredes para 3 oficinas (máxima de 500 hosts cada una): 
+
+
+ Host = 2^9  = 512 -2 510 (cumple con los 500)
+
+  32- 9 == 23 bits para la red
+
+[23 bits de red ]    [9 bits host]
+
+  
+----------------------------------------
+
+Red original: 172.30.0.0/16 (máscara 255.255.0.0).
+
+bits prestados 23 -16 = 7 bits  
+
+Número de subredes: 2^7 = 128 subredes (solo necesitas 3).
+	[23 bits de red ]  	[9 bits host]
+172.30.0.0/23 == 10101100.00011110.0000000|0.00000000
+
+172.30.1.255/23 == 10101100.00011110.00000001.11111111 (Broadcast)
+
+
+Rango de Hosts 172.30.0.1 -- 172.30.1.254
+------------------------------------------------
+		[23 bits de red ]  	[9 bits host]
+172.30.2.0. -- 10101100.00011110.000001|0.00000010
+
+172.30.3.255 == 10101100.00011110.0000001|1.11111111 (Broadcast)
+
+Rango de Hosts 172.30.2.1 -- 172.30.3.254
+
+-----------------------------------------------------------------
+
+172.30.4.0 == 10101100.00011110.0000010|0.00000000
+
+172.30.5.255 = 10101100.00011110.0000010|1.11111111 broadcast
+
+Rango de Hosts 172.30.4.1 -- 172.30.5.254
+
+
+----------------------------------------------------------------------
+
+Dada la dirección IP 192.145.200.200/25:
+32- 25 =7
+192.145.200.200/25 == 11000000.10010001.11001000.11001000
+mascara de subred 255.255.255.1|0000000 (255.255.255.128)
+
+1. ¿Cuántas otras subredes como máximo son posibles?
+7 subredes como maximo
+2. ¿Cuántas IP para equipos y dispositivos tendrá cada subred?
+
+2^7 = 128 ips 128 -2 = 126 para el resto 
+-------------------------------------------------------------------
+
+
+
+Una red de área local se quiere subdividir por necesidades de seguridad:
+1. La IP de la red es 192.168.45.0./24
+2. Se necesitan dos subredes. Una de ellas necesita alojar 64 equipos y la otra no tiene
+número mínimo. (Ajusta el resultado lo más posible al número de subredes requeridas y
+al número mínimo de hosts)
+
+2^7= 128 -2 = 126 APTO
+ 32 - 7 = 25 bits para la red
+25 - 24 = 1 bits prestado
+2^1 = 2				[25 de red]	[7 bits de host]	
+mascara es (255.255.255.128)  11111111.11111111.11111111.1|0000000
+
+192.168.45.0/25 = 11000000.10101000.00101101.0|0000000
+
+broadcast =  11000000.10101000.00101101.01111111 (192.168.45.127)
+
+3. Indica, para la primera de las subredes:
+a. Dirección de subred.
+192.168.45.0
+b. Dirección de broadcast.
+192.168.45.127
+c. Máscara de subred.
+255.255.255.128
+d. Rango de IPs disponibles para asignar a hosts.
+rango 192.168.45.1 -- 192.168.45.126
+
+------------------------------------------------------------------------------------------------------------------

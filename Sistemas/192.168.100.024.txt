@@ -6,8 +6,144 @@ mascara subred 255.255.255.0
 
 /24 + 3 = 27
 
-11111111.11111111.11111111.1110000 || 1110000 = 224
+11111111.11111111.11111111.1110000 || 1110000 = 224 ||  255.255.255.224
 
 255.255.255.224 es la mascara de subred
 
 Tener claro bits de host y de red
+
+Ip de subred            IP de Broadcast            Rango útil
+
+192.168.100.0/27	192.168.100.31   	192.168.100.1 -	192.168.100.30 
+192.168.100.32		192.168.100.63		192.168.100.33 – 192.168.100.62
+
+
+----------------------------------------------------------------------------------------------------------
+
+EJERCICIO 2
+
+ Un equipo tiene la IP 10.150.200.75 con máscara 255.255.255.128./25 Determina: 
+
+a. Bits para hosts: 
+255.255.255.128 = 11111111.11111111.11111111.10000000
+tiene 7 bits para host
+32-7 = 25 bits de red
+
+
+b. Dirección de subred: 
+255.255.255.128 = 11111111.11111111.11111111.10000000
+10.150.200.75   = 00001010.10010110.11001000.01001011
+
+Dirección de subred es 00001010.10010110.11001000.00000000 = (10.150.200.0)
+ 
+Direccion de broadcast es 00001010.10010110.11001000.01111111 = (10.150.200.127)
+
+
+c. Rango de IPs asignables a hosts:  
+
+10.150.200.1 – 10.150.200.126
+
+d. Número máximo de hosts:  
+son 126 los host máximos
+
+2^7 = 128 -2 126
+
+
+--------------------------------------------------------------------------------------------------------------------
+EJERCICIO 3
+. Usando la red 172.30.0.0/16, crea subredes para 3 oficinas (máxima de 500 hosts cada una):
+
+mascara de red es 255.255.0.0
+ 
+
+2^9 = 512 -2 510
+
+necesitamos 9 bits para host   eso es 11111111.11111111.11111110.00000000 = 255.255.254.0
+
+1 SUBRED-----------------------------------------------
+
+Dirección de broadcast de la 1 subred 
+Dirección de red: 172.30.0.0
+
+Dirección de broadcast: 172.30.1.255
+
+Rango de IPs asignables: 172.30.0.1 - 172.30.1.254
+
+2 SUBRED----------------------------------------
+
+172.30.2.0
+
+Dirección de red 172.30.2.0
+
+Y el rango de broadcast seria 172.30.3.255
+
+
+Rango de IPs asignables: 172.30.2.1 - 172.30.3.254
+
+3 Subred -------------------------------
+
+172.30.4.0
+
+dirección de red 172.30.4.0
+
+broadcast 172.30.5.255
+
+Rango de IPs asignables: 172.30.4.1 - 172.30.4.254
+
+
+------------------------------------------------------------------------------------------------------------------
+
+EJERCICIO 4 
+
+
+Dada la subred 192.168.10.64/28, indica: 
+
+
+a. Máscara de subred. 
+32-28 = 4
+
+255.255.255.240 = 11111111.11111111.11111111.11110000  4 Bits de host y 28 para red
+
+b. Número máximo de hosts. 
+2^4= 16 hots máximos - 2 = 14 host asignables
+
+
+c. IP de broadcast. 
+2^4= 16
+192.168.10.64 (64+16) = 80 -1 79 
+
+IP de broadcast = 192.168.10.79
+
+-------------------------------------------------------------------------------------------------------------------
+
+EJERCICIO 5
+
+ Dada la máscara 255.255.255.248, clasifica las siguientes IPs (subred, host, broadcast): 
+
+a. 192.168.5.32 subred
+b. 192.168.5.39 broadcast
+c. 192.168.5.33  host
+
+11111111.11111111.11111111.11111000 =	(255.255.255.248)	
+ 3 Bits para host || 29 bits de red	
+2^3 = 8-2 = 6 host asignables
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+EJERCICIO 6
+
+
+La red 10.0.0.0/8 debe dividirse en subredes para 200 sucursales, cada una con hasta 1000 hosts. Indica: 
+
+2^10 =  1024
+necesitamos 10 bits de host 
+quedan 22 de red /22
+11111111.11111111.11111100.00000000
+
+a. Máscara de subred. 
+255.255.252.0/22
+
+2^22-8 = 2^14 = 16
+
+b. Número total de subredes posibles. 

@@ -1,0 +1,150 @@
+1.Su red utiliza la dirección IP 172.30.0.0/16. Inicialmente existen  25 subredes. Con un mínimo de 1000 hosts por subred. Se proyecta un crecimiento en los próximos años de un total de 55 subredes. ¿Qué máscara de subred se deberá utilizar?
+
+A. 255.255.240.0
+B. 255.255.248.0
+C. 255.255.252.0
+D. 255.255.254.0
+E. 255.255.255.0
+
+Ip de tipo b
+
+
+2^10 = 1024 necesitamos 10 bits a host y tenemos 22 a red
+
+32-10 =22 usamos mascara /22
+
+Entonces hemos utilizado 6 bits para subred (22-16= 6)
+
+2^6 = 64 subredes Suficiente
+
+La opción correcta es la C
+
+---------------------------------------------------------------------------------------------------------------------
+
+EJERCICIO 2
+
+
+Usted planea la configurar 100 ordenadores y que puedan establecer conectividad con Internet. Su  ISP le ha asignado la dirección IP 192.168.16.0/24. Se requieren 10 Subredes con  10 hosts cada una. ¿Que máscara de subred debe utilizarse?
+
+a. 255.255.255.224
+b. 255.255.255.192
+c. 255.255.255.240
+d. 255.255.255.248
+
+
+ip de tipo c
+
+2^4 = 16 necesitamos 4 bits a host , 28 bits de red
+
+32- 4 = 28 usamos /28
+
+28-24 = 4
+
+2^4= 16 subredes suficientes
+
+11111111.11111111.11111111.11110000 = (255.255.255.240)
+
+La opción correcta es la c
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+EJERCICIO 3
+
+
+3.Una red esta dividida en 8 subredes de una clase B. ¿Que mascara de subred se deberá utilizar si se pretende tener 2500 host por subred?
+
+a.255.248.0.0
+b.255.255.240.0
+c.255.255.248.0
+d.255.255.255.255
+e.255.255.224.0
+f.255.255.252.0
+g.172.16.252.0
+
+
+2^12 = 4096  BITS DE Host 12 bits de red  20
+
+255.255.0.0/16
+
+32-12 = 20
+
+2^3 = 8 , necesitamos 3 bits de host 
+
+
+
+16 +3 = 19 nueva mascara será /19 que corresponde a 255.255.224.0. (11111111.11111111.11100000.00000000)
+
+e.255.255.224.0
+
+------------------------------------------------------------------------------------------------------------------
+
+5. ¿cuales de las siguientes subredes no pertenece a la misma red si se ha utilizado la mascara de subred  255.255.224.0?
+
+a.172.16.66.24
+b.172.16.65.33
+c.172.16.64.42
+d.172.16.63.51
+
+
+11111111.11111111.11100000.00000000 = (255.255.224.0)
+19 bits a red y 13 a host
+
+172.16.66.24 -> 10101100.00010000.01000010.00011000
+255.255.224.0 -> 11111111.11111111.11100000.00000000
+10101100.00010000.01000000.00000000 (resultado: 172.16.64.0)
+
+Sin completar
+
+-----------------------------------------------------------------------------------------------------------------------
+
+18. Usted tiene una IP 156.233.42.56 con una máscara de subred de 7 bits. ¿Cuántos host y cuantas subredes son posibles?
+
+a.126 subredes y 510 hosts
+b. 128 subredes y 512 hosts
+c. 510 hosts y 126 subredes
+d. 512 hosts y 128 subredes
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Ejercicio diferentes
+
+
+Se quiere configurar una red LAN en una habitación para que 4 ordenadores están en red compartiendo
+un router que tiene un puerto RJ45, de IP privada 192.168.0.1/24 e IP pública 80.36.45.3/8.
+
+a. ¿Qué direcciones IP podríamos poner a los 4 equipos?
+
+192.168.0.2 --192.168.0.5
+
+
+b. ¿Qué máscara de red les pondríamos?
+255.255.255.0
+
+c. ¿A qué red pertenecería? IP de red
+80.0.0.0/8.
+d. ¿cuál sería la dirección de broadcast de esta red?
+
+ 80.255.255.255.
+
+-------------------------------------------------------------------------------------------------------------------------
+
+3. Un equipo de dirección 192.168.6.3 utiliza una máscara de red de 24 bits, ¿A qué red pertenece? ¿Cuál es
+la dirección de broadcast de dicha red?
+
+192.168.6.3   =  11000000.10101000.00000110.00000011
+
+255.255.255.0  = 11111111.11111111.11111111.00000000
+
+AND 192.168.6.0 = 1000000.10101000.00000110.00000000	
+
+
+Dirección de broadcast es = 192.168.6.255
+
+
+
+ 
+
+
+

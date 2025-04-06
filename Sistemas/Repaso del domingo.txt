@@ -1,0 +1,225 @@
+3. Usando la red 192.168.0.0, crea subredes para 2 oficinas (máxima de 300 hosts cada una):
+
+2^9 = 512 || 9 bits de host  || 32 - 9 = 23
+
+[23 bits RED]			[9 bits HOST]
+11111111.11111111.1111111|0.0000000 (255.255.254.0)/23
+--------------------------------------------------------------------------
+1 Subred
+
+192.168.0.0 == 11000000.10101000.0000000|0.00000000
+
+Rango de host 192.168.0.1 --  192.168.1.254
+
+
+BROADCAST  11000000.10101000.0000000|1.11111111 = 192.168.1.255
+-----------------------------------------------------------------------------
+
+2SUBRED
+
+192.168.2.0 == 11000000.10101000.0000001|0.00000000
+
+Rango de host -- 192.168.2.1 --  192.168.2.254
+
+BROADCAST == 11000000.10101000.0000001|1.11111111 = 192.168.3.255
+
+---------------------------------------------------------------------------------------------------------------------------
+EJERCICIO2
+Usando la red 169.170.1.0/16 crea subredes para 3 oficinas (máxima de 73 hosts cada una):
+
+2^7 = 128   ||7 bits de host || 32- 7 = 25
+
+ [25 bits de red ]     [7 de host ]
+11111111.11111111.11111111.1|000000 = (255.255.255.128)/25
+
+-------------------------------------------------------
+
+1 SUBRED
+  [25 bits de red ] 			[7 de host ]
+169.170.1.0 == 10101001.10101010.00000001.0|0000000
+
+Rango de host 169.170.1.1 --  169.170.1.126
+
+BroadCast == 10101001.10101010.00000001.0|1111111 =   169.170.1.127
+
+----------------------------------------------------------------------------------------------------------------------------
+
+2 subred
+[25 bits de red ] 			[7 de host ]
+169.170.1.128 ==   10101001.10101010.00000001.1|0000000
+
+Rango de host 169.170.1.129 --  169.170.1.254
+
+Broadcast   ==  10101001.10101010.00000001.1|1111111 = 169.170.1.255
+
+
+-------------------------------------------------------------------------------------------------------------
+
+3 subred
+	[25 bits de red ] 			[7 de host ]
+169.170.2.0 ==  10101001.10101010.00000010.0|0000000  
+
+Rango de host 169.170.2.1 --  169.170.2.126
+
+Broadcast  == 10101001.10101010.00000010.0|1111111 =  169.170.2.127
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+EJERCICIO APUNTSES
+
+ La red 10.0.0.0/8 debe dividirse en subredes para 200 sucursales, cada una con hasta 1000 hosts. Indica: 
+a. Máscara de subred. 
+(255.255.252.0/22)
+b. Número total de subredes posibles.
+2^14 = 16.384
+----------------------------------------------------
+
+
+2^10 = 1024 || 10 BITS PARA EL HOST || 22 bits para red
+32-10 = 22 
+22 -8 bits originales == 14
+8 bits originales + 14
+[22 bits a red]				[10 bits a host]
+11111111.11111111.111111|00.00000000 == (255.255.252.0/22)
+
+2^14 = 16.384
+
+-----------------------------------------------------------------------------------------------------------
+
+ La red 192.168.0.0/24 debe dividirse en subredes para 70 sucursales, cada una con hasta 30 hosts. Indica: 
+a. Máscara de subred. 
+255.255.255.224./27
+b. Número total de subredes posibles.
+
+
+------------------------------------------------------
+2^5 = 32 || 5 bits para host || 27 bits para red
+
+
+27- 24(bits originales) = 3
+
+
+255.255.255.11100000 ==   255.255.255.224./27
+
+
+2^3  = 8
+
+------------------------------------------------------------------------------------------------------------------
+EJERCICIO REPASO
+
+
+Dada la subred 192.168.10.64/28, indica: 
+
+[28 BITS de red]  [4 bits de host  ]
+11111111.11111111.11111111.11110000 =   255.255.255.240/28
+
+a. Máscara de subred. 
+255.255.255.240/28
+b. Número máximo de hosts. 
+2^4 = 16 -2 = 14  máximo de host 
+c. IP de broadcast.
+192.168.10.64/28 = 11000000.10101000.00001010.0100|0000 
+
+IP  broadcast (192.168.10.79)	= 11000000.10101000.00001010.0100|1111
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Se quiere configurar una red LAN en una habitación para que 4 ordenadores están en red compartiendo
+un router que tiene un puerto RJ45, de IP privada 192.168.0.1/24 e IP pública 80.36.45.3/8.
+
+a. ¿Qué direcciones IP podríamos poner a los 4 equipos?
+  192.168.0.2/24
+ 192.168.0.3/24
+ 192.168.0.4/24
+ 192.168.0.5/24
+b. ¿Qué máscara de red les pondríamos?
+255.255.255.0
+c. ¿A qué red pertenecería? IP de red
+192.168.0.0
+d. ¿cuál sería la dirección de broadcast de esta red?
+192.168.0.255 seria la dirección 
+ [24 bits de red ] [8 de host]
+192.168.0.1 = 11000000.10101000.00000000.00000001
+192.168.0.15 = 11000000.10101000.00000000.11111111
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+ Un equipo tiene la IP 10.150.200.75 con máscara 255.255.255.128. Determina: 
+
+255.255.255.128. ==    11111111.11111111.11111111.1|0000000
+
+2^7 = 128 -2 126 host
+
+a. Bits para hosts: 
+7 BITS para el host || 25 bits a red
+
+b. Dirección de subred: 
+10.150.200.0
+c. Rango de IPs asignables a hosts:  
+
+10.150.200.1- 10.150.200.126
+d. Número máximo de hosts: 
+ 126 host
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Hay que configurar una red privada para un empresa que cuenta con dos plantas
+diáfanas pero en las que ciertos equipos tiene que tener unas medidas de seguridad
+especiales. La dirección de red es 172.25.0.0. Habrá:
+
+172.25.0.0/16  = 10101100.00011001.00000000.00000000
+
+255.255.255.0 mascara de subred
+
+
+a. Una planta con 150 equipos que pertenecerán todos a la misma subred
+
+2^8 = 256  |8 bits para host | 24 bits para red
+				[ 24 bits para red]    [8 bits para host ]
+	172.25.0.255		10101100.00011001.00000000.11111111  
+
+Rango de host es 		 172.25.0.1 -- 172.25.0.254
+---------------------------------------------------------------------------------
+
+Y otra planta con una zona con 40 equipos que han de estar aislados del
+resto de ordenadores, que son 90
+
+ip de inicio 172.25.1.0/26 Dirección subred == 10101100.00011001.00000001.00000000
+
+2^6 = 64 || 6 bits para el host y 26 para red
+[ 26 bits para red]	[6 bits para host ]
+
+ 172.25.1.63  == 10101100.00011001.00000001.00|111111   BROADCAST
+
+Rango de host  172.25.1.1 --172.25.1.62
+
+-----------------------------------------------------------------------
+
+resto de ordenadores, que son 90
+
+ 172.25.1.64/25  == 10101100.00011001.00000001.0|1000000
+
+
+2^7 = 128 | 7 bits para host || bits para red 25
+
+	[ 25 bits para red]	[7 bits para host ]
+172.25.1.127 ==	10101100.00011001.00000001.01111111 BROASCAT
+
+Rango de host  172.25.1.65 --172.25.1.126
+
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+

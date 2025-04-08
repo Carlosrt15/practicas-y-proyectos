@@ -1,0 +1,17 @@
+.boton1{
+    color: red;
+    font-weight: bold;
+
+}
+
+
+.boton1_elemnt{
+    background-color: yellow;
+    color: blue;
+
+}
+
+.titulo{
+text-shadow: 2px 2px 5px orange, -2px -2px 5px pink;
+
+}

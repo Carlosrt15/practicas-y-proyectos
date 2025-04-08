@@ -75,3 +75,59 @@ function primerBoton() {
 
 
 }
+
+function segundoBoton(){
+    // Cambiar el parrafo por segunda vez
+    let tomarParrafo = document.getElementById("parrafo");
+    tomarParrafo.setAttribute("class","boton2_p");
+
+
+
+
+    // cambiar estilo de la lista
+    let tomarLi1  = document.getElementsByTagName("li")[0];
+    let tomarLi2  = document.getElementsByTagName("li")[1];
+    let tomarLi3  = document.getElementsByTagName("li")[2];
+
+    tomarLi1.setAttribute("class","lista2");
+    tomarLi2.setAttribute("class","lista2");
+    tomarLi3.setAttribute("class","lista2");
+
+
+    // El título será de color azul claro y cursiva.
+    let tomarH2 = document.getElementsByTagName("h2")[0];
+    tomarH2.setAttribute("class","titulo2");
+
+
+
+}
+
+
+function eliminarEstilos(){
+    // Eliminar todos los estilos
+    let  deleteTomarParrafo = document.getElementById("parrafo");
+    deleteTomarParrafo.removeAttribute("class");
+
+
+
+
+    // Eliminar las clases de los elementos li
+    let tomarLi1 = document.getElementsByTagName("li")[0];
+    let tomarLi2 = document.getElementsByTagName("li")[1];
+    let tomarLi3 = document.getElementsByTagName("li")[2];
+
+
+    tomarLi1.removeAttribute("class");
+    tomarLi2.removeAttribute("class");
+    tomarLi3.removeAttribute("class");
+
+
+    // Eliminar la clase 'titulo' del título h1
+    let obtenTitulo = document.getElementsByTagName("h1")[0];
+    obtenTitulo.removeAttribute("class");
+
+    let tomarH2 = document.getElementsByTagName("h2")[0];
+    tomarH2.removeAttribute("class");
+
+
+}

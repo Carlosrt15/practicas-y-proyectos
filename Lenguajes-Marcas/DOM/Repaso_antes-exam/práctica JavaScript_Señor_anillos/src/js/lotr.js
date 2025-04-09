@@ -101,7 +101,24 @@ cambiarColor6.setAttribute("class","cambiarColor");
 // funcion tabla
 
 function insertarLibros() {
+let tomarBoton = document.getElementsByTagName("button")[0];
 
+let tomarTabla = document.getElementById("tabla");
+let crearTd =  document.createElement("tr");
+let crearCelda = [];
+
+for(let i = 0; i <4; i++) {
+    let  pedirTexto = prompt("Introduce el nombre del libro");
+   crearCelda[i] = document.createElement("td");
+   crearCelda[i].innerHTML = pedirTexto;
+   crearTd.appendChild(crearCelda[i]);
     
+}
+
+tomarTabla.appendChild(crearTd);
+
+
+
+
 
 }

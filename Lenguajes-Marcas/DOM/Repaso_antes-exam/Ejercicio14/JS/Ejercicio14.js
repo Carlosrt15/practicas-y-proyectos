@@ -39,10 +39,39 @@ function mayorEdad() {
     }
 }
 
-
+    //Poner el foco 
 function focoPass() {
 let tomarCampoContraseña = document.getElementsByTagName("input")[1];
+tomarCampoContraseña.setAttribute("class","foco-pass");
 
 
 
 } 
+
+function agrandarNombre(){
+
+    let tomarLabels = document.getElementsByTagName("label");
+    for (let label of tomarLabels) {
+        label.classList.add("labelGrande"); 
+    }
+    
+   
+}
+
+function detenerForm(){
+    let pedirConfirmacion = confirm("¿Estas seguro de enviar el formulario?");
+
+    
+        // Logica del form
+    if(pedirConfirmacion ) {
+        return true;
+
+    }else {
+        return false;
+    }
+
+
+
+}
+
+

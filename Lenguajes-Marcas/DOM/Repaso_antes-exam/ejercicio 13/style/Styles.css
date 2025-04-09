@@ -1,0 +1,37 @@
+.boton1{
+    color: red;
+    font-weight: bold;
+
+}
+
+
+.boton1_elemnt{
+    background-color: yellow;
+    color: blue;
+
+}
+
+.titulo{
+text-shadow: 2px 2px 5px orange, -2px -2px 5px pink;
+
+}
+
+.boton2_p{
+    color: yellow;
+    background-color: black;
+    border-style: dotted;
+    border-color: red;
+}
+
+.lista2{
+background-color: blueviolet;
+font-size: 20px;
+
+}
+
+.titulo2{
+color: aqua;
+font-style: italic;
+
+
+}

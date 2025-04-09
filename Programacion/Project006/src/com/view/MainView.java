@@ -1,8 +1,7 @@
 package com.view;
 
 import com.Utils.TerminalUtils;
-import com.View.loginView;
-import com.View.registerView;
+
 
 public class MainView {
 	private ClienteView clienteView ;
@@ -38,7 +37,7 @@ public class MainView {
                     this.clienteView.mostrar(); 
                     break;
                 case 2:
-                    //this.mesaView.mostrar(); 
+                    this.mesaView.mostrar(); 
                     break;
                 case 3:
                 	//this.menuView.mostrar(); 

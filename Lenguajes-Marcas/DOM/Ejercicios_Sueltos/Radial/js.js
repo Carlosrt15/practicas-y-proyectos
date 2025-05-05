@@ -16,3 +16,27 @@ function ejercicoNum() {
 
 
 }
+
+
+
+/* 
+Crear una calculadora que pida 2 numeros por pantalla 
+Los sume , reste , multiplique e divida
+*/
+
+function calculadora() {
+
+    let pedirNum1 = Number(prompt("Introduce el primer numero "));
+
+    let pedirNum2 = Number(prompt("Introduce el segundo numero "));
+
+        let suma = pedirNum1 + pedirNum2;
+        let resta = pedirNum1 - pedirNum2;
+        let  multi = pedirNum1 + pedirNum2;
+        let dividir = pedirNum1 / pedirNum2;
+
+        alert(suma, resta, multi, dividir);
+        console.log(suma, resta,multi,dividir);
+
+
+}

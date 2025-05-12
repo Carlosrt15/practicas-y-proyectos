@@ -66,7 +66,22 @@ label,input{
 }
 
 
+#div1{
+    border: solid 2px green;
+    top: 30%;
+    left: 70%;
+    position: absolute;
+   border-radius: 10px;
+    width: 200px;
+    height: 130px;
 
+}
+
+#div1 li {
+    color: rgb(190, 12, 116);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: 2px 2px 4px black;
+}
 
 
 /*  Para que cambie de color*/
@@ -83,4 +98,10 @@ label,input{
 .menu-item:hover {
     background-color: green;
     
+}
+
+h1{
+    color: rgb(67, 228, 128);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 6px 6px 12px rgb(219, 168, 168);
 }

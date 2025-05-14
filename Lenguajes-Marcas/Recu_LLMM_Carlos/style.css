@@ -1,0 +1,118 @@
+#izquierda{
+    background-color: rgb(240, 236, 236);
+    color: blue;
+      top: 45%;
+    position: absolute;
+    width: 700px;
+    left: 55%;
+    height: 400px;
+    border-radius: 10px;
+    opacity: 80%;
+    
+}
+
+#izquierda p{
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-left: 10px;
+
+    
+}
+
+iframe{
+    width: 340px;
+    height: 220px;
+    position: absolute;
+    position: absolute;
+    top: 42%;
+    left: 30%;
+    
+}
+
+body{
+    background-image: url("fondo.png");
+}
+
+#login {
+    position: absolute;
+    background-color: rgba(22, 21, 21, 0.938);
+    color: white;
+    top: 50%;
+    height: 300px;
+    width:600px;
+    border-radius: 16px;
+    z-index: 10;
+    left: 10%;
+
+}
+
+
+#p1 {
+
+    margin-top: 50px;
+    margin-left: 45px;
+    
+}
+
+#p2{
+    margin-left: 45px;
+}
+
+#b1{
+    background-color: greenyellow;
+    color: gray;
+    border-radius: 5px;
+    margin-left: 45px;
+}
+
+
+#div2{
+    background-color: white;
+    position: absolute;
+    top: 45%;
+    z-index: 50;
+    width: 260px;
+    height: 390px;
+    left: 27%;
+    border-radius: 7px;
+    align-items: center;
+    align-content: center;
+    
+
+}
+
+.input1{
+    border: solid white;
+}
+
+#boton2{
+    background-color: greenyellow;
+    color: gray;
+    border-radius: 5px;
+    margin-left: 45px;
+    height: 30px;
+    width: 80px;
+    position: fixed;
+    left: 32%;
+    top: 80%;
+}
+
+
+footer{
+    color: red;
+    text-align: right;
+    font-size: 22px;
+    align-items: flex-end;
+    position: fixed;
+    margin-bottom: 50px;
+    top: 85%;
+    width: 50%;
+}
+
+h1{
+    color: blue;
+}
+
+#s1{
+    margin-left: 160px;
+}

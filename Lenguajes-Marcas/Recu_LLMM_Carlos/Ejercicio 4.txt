@@ -1,0 +1,18 @@
+Ejercicio 4
+La función calcular 
+define la variable serie que es un array con valor de 0,1
+define la variable calculo que es igual a 1
+
+pide al usuario un numero , asegura que es un numero
+
+usa un if para cerciorarse de que el usuario introduce un numero
+
+si es correcto ejecuta un while que se ejecutara mientras calculo se menor o igual que numeroTope (valor de usuario)
+
+cambia el valor del espacio de la variable serie .
+
+calculo ahora es igual a el tamaño de serie +3
+
+muestra por consola la palabra "Final" concatenado el valor de serie.
+
+Si lo anterior no se cumple muestra por pantalla una alerta que avisa al usuario que el valor no es un numero.

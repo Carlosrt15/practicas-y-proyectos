@@ -33,6 +33,22 @@ public class Main {
     	
     }
     
+    
+    public static int multiplicar(int a, int b, int c) {
+    	  
+    	  	
+    	    	
+    	int result = a*b*c;
+    	
+    	return result;
+    	    	    	
+    }
+    
+    
+    public static boolean peso(int a) {
+     return	a >= 100;
+    }
+    
     public static String mensajeDividir(int divir) {
     	return "El resultado de la division es: "+divir;
     }

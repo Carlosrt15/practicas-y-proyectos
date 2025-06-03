@@ -7,48 +7,71 @@ const save = (req, res) => {
 
 
     // Validar datos
-    if(!body.name || !body.description || !body.state){
-            return res.status(400).send({
-                status: "error",
-                message: "Faltan datos por enviar"
-            });
+    if (!body.name || !body.description || !body.state) {
+        return res.status(400).send({
+            status: "error",
+            message: "Faltan datos por enviar"
+        });
     }
-      
+
     //Crear objeto
     let projectoToSave = new Project(body);
 
     //Guardo objeto en db
-projectoToSave.save().then(project => {
+    projectoToSave.save().then(project => {
 
-    if(!project){
-        return res.status(404).send( {
-        status: "error",
-       message : "El proyecto no fue guardado bien"
-       
+        if (!project) {
+            return res.status(404).send({
+                status: "error",
+                message: "El proyecto no fue guardado bien"
+
+
+            });
+
+
+        }
+
+        return res.status(200).send({
+            status: "succes",
+            project
+
+
+        });
+
+    }).catch(error => {
+        return res.status(500).send({
+            status: "error",
+            message: "Error al guardar el proyecto",
+            error
+
+        });
 
     });
 
 
-    }
 
-    return res.status(200).send( {
-        status: "succes",
-        project
-       
+}
 
-    });
+const projects = (req, res) => {
 
-}).catch(error =>{
-    return res.status(500).send( {
-        status: "error",
-        message: "Error al guardar el proyecto",
-        error
+    Project.find()
+            .then(projects => {
+            
+              if(!projects){
+                return res.status(404).send({
+                    status: "error",
+                    message: "No hay proyectos para mostrar"
+                });
+              }  
 
-    });
 
-});
-
-    
+            }) .catch(error => {
+                return res.status(500).send({
+                    status: "error",
+                    message: "Error al listar los proyectos",
+                    error
+                })
+            })
 
 }
 

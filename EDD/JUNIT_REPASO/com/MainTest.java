@@ -1,5 +1,6 @@
 package com;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
@@ -55,4 +56,38 @@ class MainTest {
         assertEquals("El resultado de la division es: ", Main.mensajeDividir(2));
         
     }
+    
+    @Test
+    void testPositivoMultiplicar() {
+    	assertEquals(10, Main.multiplicar(1, 2, 5));
+    	assertEquals(5, Main.multiplicar(1, 1, 5));
+    	
+    	
+    	
+    }
+    
+    @Test
+    void testNegativoMultiplicar() {
+    	assertEquals(-10, Main.multiplicar(-1, -2, -5));
+    	assertEquals(-1, Main.multiplicar(-1, -1, -1));
+    	
+    	    	
+    }
+    
+    @Test
+    void testTruePeso() {
+    	assertTrue( Main.peso(100));
+    	assertTrue(Main.peso(101));
+    	    	
+    	    	
+    }
+    
+    @Test
+    void testFalsePeso() {
+    	assertFalse( Main.peso(99));
+    	assertFalse(Main.peso(50));
+    	    	
+    	    	
+    }
+    
 }

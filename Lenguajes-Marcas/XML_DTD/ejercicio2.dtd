@@ -1,0 +1,8 @@
+<!ELEMENT correos (remitente,destinatario+,asunto,contenido)>
+<!ELEMENT remitente (nombre,direccion)>
+<!ELEMENT destinatario (nombre,direccion)>
+<!ATTLIST destinatario destPrincipal (si|no) #REQUIRED >
+<!ELEMENT asunto EMPTY>
+<!ELEMENT contenido (#PCDATA)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>

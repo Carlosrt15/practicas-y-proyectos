@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mensajeria SYSTEM "ejercicio1.dtd">
+<mensajeria>
+    <destinatario codCliente= "c001">
+        <nombre>Juan Pérez</nombre>
+        <direccion>Calle Falsa 123</direccion>
+    </destinatario>
+    <producto>
+        <tipo>Libro</tipo>
+        <importe>25.00</importe>
+    </producto>
+    <diaEntrega>2025-06-10</diaEntrega>
+</mensajeria>

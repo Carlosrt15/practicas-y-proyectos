@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE correos SYSTEM "ejercicio2.dtd">
+
+<correos>
+    <remitente>
+        <nombre>Juan</nombre>
+        <direccion>Calle falsa</direccion>
+    </remitente>
+
+    <destinatario destPrincipal="si">
+        <nombre>Maria</nombre>
+        <direccion>Avenida real</direccion>
+    </destinatario>
+
+    <asunto/>
+    <contenido>Nos reunimos a las 8</contenido>
+</correos>
